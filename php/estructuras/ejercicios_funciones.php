@@ -1,20 +1,55 @@
-<!DOCTYPE html>
-<html lang="es">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Campus Alumnado EPSUM identificarte</title>
-    <link rel="icon" id="app-favicon" type="image/x-icon" href="/favicon.ico" />
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
-    <!-- FontAwesome 5.15.4 (misma versión que CI4 — iconos embebidos en HTML de Odoo: fas fa-school, etc.) -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&family=Montserrat:wght@300;400;500;600;700;900&display=swap" rel="stylesheet" />
-    <script type="module" crossorigin src="/assets/index-D6i6W7LS.js"></script>
-    <link rel="stylesheet" crossorigin href="/assets/index-DhPa0lVr.css">
-  </head>
-  <body>
-    <div id="app"></div>
-  </body>
-</html>
+<?php
+
+/*
+ *
+ * Ejercicio 1
+ *
+ * ------------------------------
+Crear un array CLAVE-VALOR que se llame productos. Este elemento tendrá dentro arrays. Cada array interno tendrá una estructura id, name, price, stock, category. Mínimo 5 items.
+
+Luego, crea otro array llamado carrito. Este array tendrá otros arrays internos. Cada array interno tendrá lo siguiente:
+
+$cart = array(
+    ["product_id" => 1, "qty" => 2],
+    ["product_id" => 2, "qty" => 5],
+    ["product_id" => 3, "qty" => 1],
+);
+
+- listar el contenido de productos.
+
+- listar productos sin stock.
+
+- listar solo los productos (info de productos) que estén añadidos en el carrito (cart).
+
+- Listar el nombre y el precio total a pagar de los productos que estén en el carrito.
+*/
+
+
+
+
+
+
+
+
+
+
+
+
+/*
+ *
+ * Ejercicio 2
+ *
+ * ------------------------------
+Tenemos un array llamado $users o $usuarios. este array es bidimensional. La estructura de los arrays internos tiene username, password, role (ADMIN o USER), isActive (true o false).
+
+cuando Pongáis el isActive ponedlo como json_encode(true o false).
+
+Cread una variable array, que tendrá username y un password.
+
+    - Comprobar si el usuario existe en nuestra bbdd ($users). Si no existe al final de toda la comprobación habrá que poner un mensaje que diga "Usuario no existe".
+    - Si existe, y la contraseña es incorrecta, poned "Contraseña incorrecta".
+    - Si todo coincide, poned "Bienvenido [USERNAME]. Rol [ROL]".
+    - Luego crear un array unidimensional, cuya posición 0 sea "Acceso total", la posición 1 será "Acceso limitado".
+
+ *
+ * */

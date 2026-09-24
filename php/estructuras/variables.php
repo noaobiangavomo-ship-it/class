@@ -1,20 +1,69 @@
-<!DOCTYPE html>
-<html lang="es">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Campus Alumnado EPSUM identificarte</title>
-    <link rel="icon" id="app-favicon" type="image/x-icon" href="/favicon.ico" />
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
-    <!-- FontAwesome 5.15.4 (misma versión que CI4 — iconos embebidos en HTML de Odoo: fas fa-school, etc.) -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&family=Montserrat:wght@300;400;500;600;700;900&display=swap" rel="stylesheet" />
-    <script type="module" crossorigin src="/assets/index-D6i6W7LS.js"></script>
-    <link rel="stylesheet" crossorigin href="/assets/index-DhPa0lVr.css">
-  </head>
-  <body>
-    <div id="app"></div>
-  </body>
-</html>
+<?php
+
+// Esto es un comentario en línea
+
+/*
+ *
+ * Esto es un
+ * comentario
+ * en bloque
+ *
+ * */
+
+
+echo "<h1 class='mb-3'>Hola mundo</h1>";
+
+
+/*
+ * Tipos de dato: boolean, strings, float, int, arrays, arraysList...
+ * */
+$mensaje = "Hola ";
+echo $mensaje . "Camilo, edad: " . 28;
+$bool_val = true;
+$edad = 28;
+$altura = 1.5;
+
+
+echo "<br>";
+echo print($mensaje);
+echo "<br>";
+
+$frutas = ["manzana", "pera", "naranja"];
+$frutas2 = Array("plátano", "fresa", "manzana");
+
+print_r($frutas);
+echo "<br>";
+echo $frutas[0];
+
+$usuario_logged = null;
+
+echo "<br>";
+echo "<br>";
+
+echo gettype($mensaje); // String
+echo "<br>";
+echo gettype($edad); // Integer
+echo "<br>";
+echo gettype($altura); // Float
+echo "<br>";
+echo gettype($frutas); // Array
+echo "<br>";
+echo gettype($frutas[0]); // String
+echo "<br>";
+echo "<br>";
+
+
+
+$numero = "123.5976";
+
+$integro = (int) $numero; // 123
+echo $integro;
+echo "<br>";
+$decimal = (float) $numero; // 123.5976
+echo $decimal;
+echo "<br>";
+$doble = (double) $numero; // 123.5976
+echo $doble;
+
+
+?>

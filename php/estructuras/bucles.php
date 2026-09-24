@@ -1,20 +1,86 @@
-<!DOCTYPE html>
-<html lang="es">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Campus Alumnado EPSUM identificarte</title>
-    <link rel="icon" id="app-favicon" type="image/x-icon" href="/favicon.ico" />
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
-    <!-- FontAwesome 5.15.4 (misma versión que CI4 — iconos embebidos en HTML de Odoo: fas fa-school, etc.) -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&family=Montserrat:wght@300;400;500;600;700;900&display=swap" rel="stylesheet" />
-    <script type="module" crossorigin src="/assets/index-D6i6W7LS.js"></script>
-    <link rel="stylesheet" crossorigin href="/assets/index-DhPa0lVr.css">
-  </head>
-  <body>
-    <div id="app"></div>
-  </body>
-</html>
+<?php
+
+$frutas = array(
+        "Manzana",
+        "Pera",
+        "Plátano"
+);
+
+echo count($frutas) . " Items en frutas";
+echo "<br>";
+echo "<br>";
+
+
+for ($i = 0; $i < count($frutas); $i++) {
+    echo $frutas[$i] . ", INDEX $i" . "<br>";
+}
+
+echo "<br>";
+echo "<br>";
+
+foreach ($frutas as $item) {
+    echo $item . "<br>";
+}
+
+
+echo "<br>";
+echo "<br>";
+
+echo json_encode(in_array("Manzana", $frutas)); // Busca dentro de un [] un valor -> true / false
+array_push($frutas, "Piña"); // Añade un valor al final del array
+
+echo "<br>";
+print_r($frutas);
+echo "<br>";
+array_pop($frutas); // Borrar último elemento del array
+print_r($frutas);
+echo "<br>";
+array_shift($frutas); // Borrar el primer elemento del array
+print_r($frutas);
+echo "<br>";
+array_unshift($frutas, "uva"); // Añade un valor al principio del array
+print_r($frutas);
+sort($frutas); // Ordenamos en orden
+echo "<br>";
+echo "<br>";
+print_r($frutas);
+echo "<br>";
+echo "<br>";
+rsort($frutas); // Ordenamos a la inversa -> Reverse Sort
+print_r($frutas);
+
+
+$frutas2 = array(
+        "Primero" => "Manzana",
+        "Segundo" => "Pera",
+        "Tercero" => "Plátano"
+);
+echo "<br>";
+echo "<br>";
+echo $frutas2["Primero"];
+echo "<br>";
+echo "<br>";
+
+foreach ($frutas2 as $key => $value) {
+    echo $key . ": " . $value . "<br>";
+}
+
+
+?>
+
+
+
+
+<?php //foreach ($frutas2 as $key => $value): ?>
+<!--<div>-->
+<!--    <div>-->
+<!--        <h2>Sub H2</h2>-->
+<!--        <p>-->
+<!--            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aspernatur deleniti distinctio maiores numquam-->
+<!--            quod soluta vitae. Beatae doloribus eligendi, eum excepturi harum itaque minus natus porro quaerat, rerum-->
+<!--            sapiente velit.-->
+<!--        </p>-->
+<!--        <button>Añadir al carrito</button>-->
+<!--    </div>-->
+<!--</div>-->
+<?php //endforeach; ?>
