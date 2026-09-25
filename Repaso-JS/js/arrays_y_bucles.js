@@ -137,6 +137,60 @@ let suma_carrito_reduce = juegos.reduce((acumulador, juego) => {
 }, 0)
 
 
+// 5. FIND => Retorna el primer elemento que cumpla la condición proporcionada aunque existan más de 1 elemento.
+
+let numeros = [1, 2, 5, 10, 20, 25]
+
+// let existe = false, n = undefined, cont = 0
+// while (!existe && cont < numeros.length) {
+//     if (numeros[cont] > 5) {
+//         existe = true
+//         n = numeros[cont]
+//     }
+//     cont++;
+// }
+// console.log(existe, n)
+
+let buscar_find = numeros.find(n => {
+    return n > 5
+});
+console.log(buscar_find)
+separator()
+separator()
+
+
+// 6. SOME y 7. EVERY
+// SOME => Al menos un elemento en el array debe de cumplir la condición
+// EVERY => TODOS los elementos del array deben de cumplir la condición
+
+const juegos_menor_10 = juegos.some(juego => { // true
+    return juego.precio < 4
+})
+console.log(juegos_menor_10)
+
+const juegos_precio_mayor_a_10 = juegos.every(juego => { // false
+    return juego.precio > 10
+})
+console.log(juegos_precio_mayor_a_10)
+separator()
+separator()
+
+// 8. WITH
+// WITH => Cambia el valor de un elemento en un array. Le proporcionamos la posición y el nuevo valor
+
+let numeros2 = [1, 2, 5, 10, 20, 25] // Reemplacemos el valor de 5 por 30
+let numeros3 = numeros2.with(2, 30)
+console.log(numeros2)
+console.log(numeros3)
+
+// 9. REVERSE
+// REVERSE => Invertimos la lista
+numeros3.reverse()
+console.log(numeros3)
+
+// 10. toString
+// toString => juntamos en una cadena de texto los elementos de un array
+console.log(numeros2.toString())
 
 
 

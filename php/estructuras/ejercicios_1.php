@@ -26,10 +26,46 @@
  *
  * */
 
+<?php
+// Nombre de la persona
+$nombre = "Carlos";
+// Edad de la persona
+$edad = 20;
+// Tipo de membresía
+$membresia = "premium";
+// Si ha pagado la cuota
+$cuotaPagada = true;
+// Hora actual
+$hora = 19;
+// Primero comprobamos la edad
+if ($edad < 16) {
 
+    echo "Acceso denegado: eres menor de 16 años.";
 
+} elseif (!$cuotaPagada) {
 
+    echo "Acceso denegado: la cuota no está pagada.";
 
+} else {
+
+    // Comprobamos el tipo de membresía
+    if ($membresia == "basic" && $hora >= 8 && $hora <= 18) {
+
+        echo "Acceso permitido. Nombre: $nombre. Membresía: $membresia";
+
+    } elseif ($membresia == "premium" && $hora >= 7 && $hora <= 21) {
+
+        echo "Acceso permitido. Nombre: $nombre. Membresía: $membresia";
+
+    } elseif ($membresia == "vip" && $hora >= 6 && $hora <= 23) {
+
+        echo "Acceso permitido. Nombre: $nombre. Membresía: $membresia";
+
+    } else {
+
+        echo "Acceso denegado: no puede acceder a esta hora.";
+    }
+}
 
 /*
  * EJERCICIO 2
@@ -71,9 +107,72 @@
  * IMPORTANTE: Primero se aplica el descuento y después se calcula el envío
  * */
 
+<?php
 
+// Nombre del cliente
+$nombre = "Carlos";
 
+// Precio de la compra
+$compra = 125;
 
+// Si es miembro
+$miembro = true;
+
+// Código de descuento
+$codigo = "VIP20";
+
+// Precio a partir del cual el envío es gratis
+$PRECIO_ENVIO = 100;
+
+// Si no se introduce código, usamos "SIN_CODIGO"
+$codigo = $codigo ?? "SIN_CODIGO";
+
+// Calculamos el descuento
+if ($codigo == "WELCOME10") {
+
+    $descuento = 10;
+
+} elseif ($codigo == "VIP20") {
+
+    $descuento = 20;
+
+} elseif ($codigo == "SUMMER15") {
+
+    $descuento = 15;
+
+} else {
+
+    $descuento = 0;
+}
+
+// Calculamos el dinero que se descuenta
+$dineroDescuento = $compra * $descuento / 100;
+
+// Primero aplicamos el descuento
+$precioFinal = $compra - $dineroDescuento;
+
+// Calculamos el envío
+if ($miembro == true) {
+
+    $envio = 0;
+
+} elseif ($precioFinal >= $PRECIO_ENVIO) {
+
+    $envio = 0;
+
+} else {
+
+    $envio = 6.90;
+}
+// Calculamos el total
+$total = $precioFinal + $envio;
+// Mostramos los resultados
+echo "Cliente: $nombre<br>";
+echo "Compra: $compra €<br>";
+echo "Código de descuento: $codigo<br>";
+echo "Descuento: $descuento %<br>";
+echo "Coste del envío: $envio €<br>";
+echo "Total: $total €";
 
 /*
  *
@@ -121,3 +220,62 @@ Finalmente, muestra algo similar a (ejemplo de salida):
 Para el transporte debes utilizar match, no switch.
 
  * */
+
+<?php
+
+// Nombre del cliente
+$nombre = "Marta";
+
+// Tipo de transporte
+$transporte = "tren";
+
+// Distancia del viaje
+$distancia = 120;
+
+// Primero comprobamos que la distancia sea correcta
+if ($distancia <= 0) {
+    echo "Error: la distancia debe ser mayor que 0.";
+
+} else {
+    // Con match buscamos el precio según el transporte
+    $precioKm = match ($transporte) {
+        "bus" => 0.20,
+        "tren" => 0.15,
+        "taxi" => 1.20,
+        "bici" => 0.05,
+        default => 0
+    };
+
+    // Comprobamos si el transporte existe
+    if ($precioKm == 0) {
+
+        echo "Error: el transporte no es válido.";
+
+    } else {
+
+        // Calculamos el precio inicial
+        $precioInicial = $distancia * $precioKm;
+        // Calculamos el descuento
+        if ($distancia > 100) {
+
+            $descuento = 20;
+        } elseif ($distancia > 50) {
+
+            $descuento = 10;
+        } else {
+            $descuento = 0;
+        }
+        // Calculamos cuánto dinero se descuenta
+        $dineroDescuento = $precioInicial * $descuento / 100;
+        // Calculamos el precio final
+        $precioFinal = $precioInicial - $dineroDescuento;
+        // Mostramos los resultados
+        echo "Cliente: $nombre<br>";
+        echo "Transporte: $transporte<br>";
+        echo "Distancia: $distancia km<br>";
+        echo "Precio por km: $precioKm €<br>";
+        echo "Precio inicial: $precioInicial €<br>";
+        echo "Descuento: $descuento %<br>";
+        echo "Precio final: $precioFinal €";
+    }
+}
