@@ -267,6 +267,64 @@ ventas.forEach(venta => console.log(`${venta.mes}: ${venta.importe}€`));
  *
  * */
 
+ const playlist = [
+       { titulo: "Bohemian Rhapsody", artista: "Queen",      duracion: 354, reproducciones: 1200 },
+       { titulo: "Blinding Lights",   artista: "The Weeknd", duracion: 200, reproducciones: 980  },
+       { titulo: "Shape of You",      artista: "Ed Sheeran", duracion: 234, reproducciones: 1500 },
+      { titulo: "Hotel California",  artista: "Eagles",     duracion: 391, reproducciones: 870  },
+      { titulo: "Levitating",        artista: "Dua Lipa",   duracion: 203, reproducciones: 620  },
+      { titulo: "Smells Like Teen",  artista: "Nirvana",    duracion: 301, reproducciones: 1100 },
+     ];
+// forEach
+playlist.forEach(playlist => console.log(`${playlist.artista} - ${playlist.titulo}: ${playlist.reproducciones}`));
+// filter canciones con mas 1000 reproducciones
+const mayorReproducciones = playlist.filter(item => item.reproducciones >= 1000);
+console.log( mayorReproducciones);
+
+//usar map 
+const titulosRepro = playlist.map(item => {
+    return {
+        ...item,
+        tiRe: Number((item.reproducciones * 0.10).toFixed(2)),
+    }
+})
+console.log(titulosRepro);
+//reduce
+
+const duracionTotal = playlist.reduce((total, cancion) => {
+    return total + cancion.duracion;
+}, 0);
+
+console.log("Duración total:", duracionTotal, "segundos");
+
+
+// find cancion que dure mas de 300 segundos
+const MasRepr  = playlist.find(item => {
+     return item.duracion > 300 
+} );
+console.log(MasRepr);
+// some para mirar si hay una cancion que supera los 1400 reproducciones
+
+
+const cancion_mayor = playlist.some( item =>{
+     return item.reproducciones  > 1400
+} );
+console.log(cancion_mayor);
+// every 500 reproducciones
+const mayor_repro = playlist.every(item =>{
+     return item.reproducciones > 500
+}  );
+console.log(mayor_repro);
+//with 
+const playlist2 = playlist.with(4,750)
+ console.log(playlist2);
+// reverse 
+playlist.reverse();
+console.log(playlist);
+//tostring(extraer los titulos con map)
+const titulos = playlist.map(item => item.titulo);
+const resultado = titulos.toString();
+console.log(resultado);;
 
 /*
  * 7. Sistema de pedidos de un restaurante
@@ -294,7 +352,57 @@ ventas.forEach(venta => console.log(`${venta.mes}: ${venta.importe}€`));
  *
  * */
 
-
+const pedidos = [
+     { id: 1, cliente: "Ana",   plato: "Paella",      precio: 14.50, listo: true  },
+      { id: 2, cliente: "Luis",  plato: "Ensalada",    precio: 8.00,  listo: false },
+     { id: 3, cliente: "Marta", plato: "Chuletón",    precio: 22.00, listo: true  },
+       { id: 4, cliente: "Pedro", plato: "Gazpacho",    precio: 6.50,  listo: false },
+       { id: 5, cliente: "Sofía", plato: "Risotto",     precio: 16.00, listo: true  },
+       { id: 6, cliente: "Jorge", plato: "Hamburguesa", precio: 11.00, listo: false },
+     ];
+//forEach
+pedidos.forEach(pedidos => console.log(`${pedidos.id} - ${pedidos.cliente}- ${pedidos.plato}- ${pedidos.precio}`));
+// filter
+const pedido_Listo = pedidos.filter( item => item.listo === true);
+console.log(pedido_Listo);
+//map
+const precioIva = pedidos.map( item => {
+     return{
+          ...item,
+          precioConIva: (item.precio *1.21).toFixed(2),
+     }
+} );
+console.log(precioIva);
+//reduce
+const Recaudacion = pedidos.reduce((acum, total) => {
+     return acum + total.precio;
+}, 0);
+console.log(Recaudacion)
+//find 
+const EncontrarCliente = pedidos.find(item => {
+     return item.cliente ==="Marta"
+});
+console.log(EncontrarCliente);
+// some 
+const ENcontrarPedido = pedidos.some(item => {
+     return item.precio >= 20; 
+});
+console.log(ENcontrarPedido);
+//every 
+const pedidosListos = pedidos.every(item => {
+     return item.listo === true;
+});
+console.log(pedidosListos);
+// with
+const pedido2 = pedidos.with(1, true);
+console.log(pedido2);
+// reverse
+pedidos.reverse();
+console.log(pedidos);
+// tostring
+const nombres = pedidos.map(item => item.plato);
+const answer = nombres.toString();
+console.log(answer);
 /*
  * 8. Resultados de un torneo de videojuegos
  *
@@ -322,8 +430,56 @@ ventas.forEach(venta => console.log(`${venta.mes}: ${venta.importe}€`));
  *      Pista: primero extrae los nombres con map.
  *
  * */
+    const Jugadores = [
+       { nombre: "XxGamer99",  puntos: 4200, victorias: 18, derrotas: 7,  pais: "España"   },
+       { nombre: "ProPlayer",  puntos: 3800, victorias: 15, derrotas: 10, pais: "Francia"  },
+      { nombre: "NinjaCode",  puntos: 5100, victorias: 22, derrotas: 3,  pais: "España"   },
+       { nombre: "DarkMaster", puntos: 2900, victorias: 12, derrotas: 13, pais: "Alemania" },
+      { nombre: "StarKiller", puntos: 4700, victorias: 20, derrotas: 5,  pais: "España"   },
+       { nombre: "IronFist",   puntos: 3200, victorias: 14, derrotas: 11, pais: "Italia"   },
+     ];
+//forEach
+Jugadores.forEach(Jugadores => console.log(`${Jugadores.nombre} - ${Jugadores.puntos}- ${Jugadores.victorias}- ${Jugadores.derrotas}- ${Jugadores.pais}`));
+// map 
+const radio = Jugadores.map(item => {
+    return {
+        ...item,
+        ratio: (item.victorias / (item.victorias + item.derrotas)).toFixed(2)
+    };
+});
+console.log(radio);
+//reduce
+const calculoTorneo = Jugadores.reduce((acum, total)=> {
+     return acum + total.puntos;
+}, 0);
+console.log(calculoTorneo);
 
+// find
+const encontrarJugador = Jugadores.find( item =>{
+     return item.puntos> 5000;
+});
+console.log(encontrarJugador);
+// some 
+const encuetrajugador = Jugadores.some(item=>  {
+     return item.victorias > 20;
+}); 
+console.log(encuetrajugador);
+//every
+const encuetraju = Jugadores.some(item=>  {
+     return item.victorias >=10;
+}); 
+console.log(encuetraju);
+// with
+const jugadoresCorregidos = Jugadores.with(3, 3100);
+console.log(jugadoresCorregidos);
+// reverse
+const jugadoresAlReves = Jugadores.reverse();
+console.log(jugadoresAlReves);
+// toString
 
+const Nombres = Jugadores.map(item => item.nombre);
+const nombresString = Nombres.toString();
+console.log(nombresString);
 /*
  * 9. Liga de fútbol — jornada de partidos
  *
@@ -370,8 +526,100 @@ ventas.forEach(venta => console.log(`${venta.mes}: ${venta.importe}€`));
  *      de la última jornada a la primera.
  *
  * */
+ const partidos = [
+       { local: "Barcelona",  visitante: "Madrid",    golesLocal: 3, golesVisitante: 1, jornada: 1 },
+       { local: "Sevilla",    visitante: "Valencia",  golesLocal: 1, golesVisitante: 1, jornada: 1 },
+       { local: "Atlético",   visitante: "Villarreal",golesLocal: 2, golesVisitante: 0, jornada: 1 },
+       { local: "Betis",      visitante: "Getafe",    golesLocal: 0, golesVisitante: 1, jornada: 2 },
+       { local: "Madrid",     visitante: "Atlético",  golesLocal: 2, golesVisitante: 2, jornada: 2 },
+       { local: "Valencia",   visitante: "Barcelona", golesLocal: 1, golesVisitante: 4, jornada: 2 },
+     ];
+ 
+//map
+const partidosResultado = partidos.map(item => {
+    let resultado;
 
+    if (item.golesLocal > item.golesVisitante) {
+        resultado = "Victoria local";
+    } else if (item.golesLocal < item.golesVisitante) {
+        resultado = "Victoria visitante";
+    } else {
+        resultado = "Empate";
+    }
 
+    return {
+        ...item,
+        resultado: resultado
+    };
+});
+
+console.log(partidosResultado);
+// filter: 
+const jornada2 = partidos.filter(item => item.jornada === 2);
+console.log(jornada2);
+// reduce
+const totalGoles = partidos.reduce((total, item) => {
+    return total + item.golesLocal + item.golesVisitante;
+}, 0);
+console.log(totalGoles);
+//forEach
+partidos.forEach(item => {
+
+    let resultado;
+
+    if (item.golesLocal > item.golesVisitante) {
+        resultado = "1";
+    } else if (item.golesLocal < item.golesVisitante) {
+        resultado = "2";
+    } else {
+        resultado = "X";
+    }
+
+    console.log(`${item.local} ${item.golesLocal} - ${item.golesVisitante} ${item.visitante} → ${resultado}`);
+});
+// find 
+const buscarLocal = partidos.find(item=>{
+     return item.local==="Madrid" || item.visitante==="Madrid";
+} );
+console.log(buscarLocal);
+//some
+const masDe4 = partidos.some(item => {
+    return item.golesLocal + item.golesVisitante > 4;
+});
+console.log(masDe4);
+// filter + every
+const partidosJornada1 = partidos.filter(item => item.jornada === 1);
+const todosConGol = partidosJornada1.every(item => {
+    return item.golesLocal + item.golesVisitante >= 1;
+});
+
+console.log(todosConGol);
+
+//reduce
+const resultados = partidos.reduce((total, item) => {
+    if (item.golesLocal > item.golesVisitante) {
+        total.local++;
+    } else if (item.golesLocal < item.golesVisitante) {
+        total.visitante++;
+    } else {
+        total.empate++;
+    }
+
+    return total;
+
+}, {
+    local: 0,
+    visitante: 0,
+    empate: 0
+});
+
+console.log(resultados);
+ // reverse
+ const partidosReverso = [...partidos].reverse();
+
+console.log(partidosReverso);
+
+//
 /*
  * 10. Gestión de alumnos con notas por asignatura
  *
