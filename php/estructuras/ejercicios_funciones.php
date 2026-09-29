@@ -133,10 +133,7 @@ foreach ($usuarios as $usuario) {
         if ($usuario["password"] != $usuarioLogin["password"]) {
           echo "Contraseña incorrecta";
         } else {
-            // Todo coincide
-            echo "Bienvenido " . $usuario["username"];
-            echo "<br>";
-            echo "Rol: " . $usuario["role"];
+            echo "Bienvenido " . $usuario["username"] . ". Rol " . $usuario["role"];
         }
     }
 }
