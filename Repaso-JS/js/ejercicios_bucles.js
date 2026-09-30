@@ -710,3 +710,58 @@ console.log(partidosReverso);
  *    - Usa map y toString para obtener una cadena con todos los nombres.
  *
  * */
+
+ const alummnos = [
+       {
+         nombre: "Carmen",
+         asignaturas: [
+           { nombre: "Matemáticas", nota: 7.5 },
+           { nombre: "Lengua",      nota: 8.0 },
+           { nombre: "Historia",    nota: 6.5 },
+           { nombre: "Inglés",      nota: 9.0 },
+         ]
+       },
+       {
+         nombre: "Roberto",
+         asignaturas: [
+           { nombre: "Matemáticas", nota: 4.0 },
+           { nombre: "Lengua",      nota: 5.5 },
+           { nombre: "Historia",    nota: 3.5 },
+           { nombre: "Inglés",      nota: 6.0 },
+         ]
+       },
+       {
+         nombre: "Elena",
+         asignaturas: [
+           { nombre: "Matemáticas", nota: 9.5 },
+           { nombre: "Lengua",      nota: 8.5 },
+           { nombre: "Historia",    nota: 9.0 },
+          { nombre: "Inglés",      nota: 8.0 },
+         ]
+       },
+       {
+         nombre: "David",
+         asignaturas: [
+          { nombre: "Matemáticas", nota: 5.0 },
+          { nombre: "Lengua",      nota: 4.5 },
+           { nombre: "Historia",    nota: 6.0 },
+           { nombre: "Inglés",      nota: 5.5 },
+         ]
+       },
+       {
+         nombre: "Isabel",
+         asignaturas: [
+           { nombre: "Matemáticas", nota: 6.0 },
+           { nombre: "Lengua",      nota: 7.0 },
+           { nombre: "Historia",    nota: 5.5 },
+           { nombre: "Inglés",      nota: 7.5 },
+         ]
+       },
+     ];
+ /*
+   *   - Usa map para crear un nuevo array donde cada alumno tenga:
+ *        · nombre
+ *        · promedio: la media de sus notas (usa reduce sobre sus asignaturas)
+ *        · estado: "Aprobado" si el promedio >= 5, "Suspenso" si no.
+ *      Pista: necesitarás un reduce DENTRO del map para calcular el promedio.
+ */
