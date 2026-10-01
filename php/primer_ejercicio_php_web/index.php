@@ -22,11 +22,13 @@ $filtroUniverso = "Marvel"
                 // mostrar solo las peliculas marverl
                 //if ($peli["universo"] != $filtroUniverso) {
                  //   continue; // Saltar a la siguiente iteración si el universo no coincide
-               // }
+               //}
+
                // peliculas con mas puntuacion 
                //if ($peli["puntuacion"] < 8.0) {
                   //  continue; // Saltar a la siguiente iteración si la puntuación es menor a 8.0
                 //}
+
                 //peliculas que no han sido vistas
                 //foreach ($watchlist as $item) {
                   //  if ($item["pelicula_id"] == $peli["id"]) {
@@ -43,10 +45,17 @@ $filtroUniverso = "Marvel"
      
                      <h2><?= $peli["titulo"]; ?></h2>
                       <h3><?= $peli["universo"]; ?></h3>
-                      <p><?= $peli["año"]; ?></p>
-                      <p><?= $peli["puntuacion"]; ?></p>
-                      <spam class="disponible"><p><?php if ($peli["disponible"]== true) 
-        {echo "Disponible";} else {echo "No Disponible";} ?></spam>
+                      <p><?= $peli["anyo"]; ?></p>
+                      <p><?= $peli["puntuacion"] ?>★</p>
+                      
+                    <p class="disponible">
+                        <?php 
+                        if ($peli["disponible"]) {
+                            echo "Disponible";
+                        } 
+                        ?>
+                    </p>
+                    <p class="no-disponible"><?php if ($peli["disponible"]== false) {echo "No Disponible";}  ?></p>
        
        
     

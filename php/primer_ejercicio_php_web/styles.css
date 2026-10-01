@@ -71,3 +71,12 @@ main section {
 main section:last-child {
   margin-bottom: 0;
 }
+
+.pelis p.disponible {
+    color: rgb(0, 45, 128) ;
+    font-weight: bold;
+}
+.pelis p.no-disponible {
+    color: red;
+    font-weight: bold;
+}
