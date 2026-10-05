@@ -19,19 +19,22 @@ section {
     border: 1px solid black;
     border-radius: 15px;
     padding: 50px 40px;
-    background-color: #fdf6e2;
+    background-color: white;
 }
 
 section.peliculas {
     display: grid;
     grid-template-columns: repeat(4, 1fr); /*1fr 1fr 1fr 1fr*/
     grid-gap: 25px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.791);
 }
 section.peliculas > .pelis {
     border: 1px solid #8b0000;
     border-radius: 15px;
     padding: 25px 15px;
     position: relative;
+    box-shadow: #c81616a6;
+    
 }
 
 section.peliculas > .pelis img {
@@ -58,6 +61,7 @@ section.formulario  {
     grid-gap: 25px;
     border-radius: 15px;
     padding: 25px 15px;
+    box-shadow: rgba(0, 0, 0, 0.819);
 }
 h4,h1{
     text-align: center;
