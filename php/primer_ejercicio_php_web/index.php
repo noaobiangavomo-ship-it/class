@@ -43,10 +43,10 @@ $filtroUniverso = "Marvel"
 
                   <img src="<?= $peli['imagen'] ?>" alt="<?= $peli["titulo"]; ?>">
      
-                     <h2><?= $peli["titulo"]; ?></h2>
-                      <h3><?= $peli["universo"]; ?></h3>
-                      <p><?= $peli["anyo"]; ?></p>
-                      <p><?= $peli["puntuacion"] ?>★</p>
+                     <h2> <strong>Titulo: </strong><?= $peli["titulo"]; ?></h2>
+                      <h3><strong>Universo: </strong><?= $peli["universo"]; ?></h3>
+                      <p><strong>Año: </strong><?= $peli["anyo"]; ?></p>
+                      <p><strong>Puntuación: </strong><?= $peli["puntuacion"] ?>★</p>
                       
                     <p class="disponible">
                         <?php 
