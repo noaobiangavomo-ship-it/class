@@ -1,4 +1,5 @@
 <?php
+session_start();
 
 function redirect($file, $error = null): void
 {
@@ -12,7 +13,7 @@ function redirect($file, $error = null): void
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $email = $_POST['email'];
-    $passwd = $_POST["passwd"];
+    $passwd = $_POST["password"];
 
     /*
      *
@@ -26,13 +27,15 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
      * */
 
     $arr = [
-        "usuario" => "camilo@gmail.com",
+        "usuario" => "leonor@gmail.com",
         "passwd" => "12345",
     ];
 
     if (count($arr) > 0 && $arr["usuario"] === $email) { /* Usuario existe porque el arr tiene valores*/
         if ($passwd === $arr["passwd"]) {
             /* Contraseña correcta. Permitimos acceder al panel de control */
+
+            $_SESSION["usuario_logged"]="leonor";
             redirect("dashboard");
         } else {
             /* Contraseña incorrecta. Retornamos a login con mensaje de error */

@@ -1,5 +1,10 @@
 <?php
 require_once __DIR__ . "/array.php";
+session_start();
+if(!isset($_SESSION["usuario_logged"])){
+    header("location: ./index.php");
+    exit();
+}
 ?>
 <!DOCTYPE html>
 <html lang="es">
