@@ -38,7 +38,7 @@ if(!isset($_SESSION["usuario_logged"])){
             <div>
                 <select id="category" name="Status">
                 <option value="status">Status</option>
-                <option value="published">EPublished</option>
+                <option value="published">Published</option>
                 <option value="draft">Draft</option>
                 <option value="Inactive">Inactive</option>
                </select>
