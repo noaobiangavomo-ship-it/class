@@ -2,7 +2,7 @@
 <?php
 
 $peliculas = [
-    ["id" => 1, "titulo" => "The Merger", "director" => "Producción de Uche Montana TV ",  "anyo" => 2026, "genero"=>"Drama/Romance", "duracion" => 5.700,  "destacado" => true, "imagen" => "img/merger.jpeg"],
+    ["id" => 1, "titulo" => "K&C", "director" => "Producción de Uche Montana TV ",  "anyo" => 2026, "genero"=>"Drama/Romance", "duracion" => 5.700,  "destacado" => true, "imagen" => "img/merger.jpeg"],
     ["id" => 2, "titulo" => "Monica", "director" => "Omoruyi Wallz Efosa",  "anyo" => 2026, "genero"=>"Drama/Romance ", "duracion" => 7.440,  "destacado" => true, "imagen" => "img/monica.jpeg"],
     ["id" => 3, "titulo" => "Nenye", "director" => "Ubachukwu Kenny y Onyii Alex",  "anyo" => 2026, "genero"=>" Drama/Comedia", "duracion" => 7.620,  "destacado" => false,"imagen" => "img/nenye.jpeg"],
     ["id" => 4, "titulo" => "Odogwu", "director" => "Marvel",  "anyo" => 2008, "genero"=>" ", "duracion" => 8.820,  "destacado" => true, "imagen" => "img/odogu1.jpeg"],

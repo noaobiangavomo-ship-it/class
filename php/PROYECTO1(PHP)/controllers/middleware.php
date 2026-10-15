@@ -34,7 +34,7 @@ if (isset($usuarios) && is_array($usuarios)) {
     }
 }
 
-// : acepta contraseñas hasheadas o en texto simple para ajustarse
+//  acepta contraseñas hasheadas o en texto simple para ajustarse
 // a los datos de ejemplo; en un proyecto real, guárdalas siempre con hash.
 $accesoValido = false;
 
