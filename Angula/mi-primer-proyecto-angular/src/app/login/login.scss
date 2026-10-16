@@ -1,0 +1,13 @@
+form{
+    display: flex;
+    flex-direction: column;
+    border-radius: 20px;
+    border: 20px solid black;
+    padding: 30px;
+    width: 95%;
+    max-width: 500px;
+    background-color: red($color: #000000);
+    margin: 60px auto;
+    padding: 30px 20px;  
+}
+
