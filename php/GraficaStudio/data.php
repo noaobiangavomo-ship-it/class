@@ -5,8 +5,9 @@ $revistas = [
     ["id" => 3, "titulo" => "Saray", "entrevista" => "Graphia Studio ",  "profesion" =>"Cosmóloga ", "categoria"=>" Cosmología", "fecha" => 2026,  "destacado" => true, "imagen" => "img/3.jpeg"],
     ["id" => 4, "titulo" => "Día de las Fuerzas Armadas", "entrevista" => " Graphia Studio",  "profesion" =>"Comunicación institucional ", "categoria"=>" Efemérides", "fecha" => 2026,  "destacado" => true, "imagen" => "img/4.jpeg"],
     ["id" => 5, "titulo" => "Funny Becky", "entrevista" => " Graphia Studio",  "profesion" =>"Creadora de Contenido ", "categoria"=>" Redes Sociales", "fecha" => 2025,  "destacado" => true, "imagen" => "img/6.jpeg"],
-    ["id" => 6, "titulo" => "Día de las Fuerzas Armadas", "entrevista" => " Graphia Studio",  "profesion" =>"Comunicación institucional ", "categoria"=>" Efemérides", "fecha" => 2026,  "destacado" => true, "imagen" => "img/7.jpeg"],
-       
+    ["id" => 6, "titulo" => "Día de las Fuerzas Armadas", "entrevista" => " Graphia Studio",  "profesion" =>"Comunicación institucional ", "categoria"=>" Efemérides", "fecha" => 2026,  "destacado" => false, "imagen" => "img/7.jpeg"],
+    ["id" => 7, "titulo" => "Miss Guinea", "entrevista" => " Graphia Studio",  "profesion" =>"Modelo", "categoria"=>" Modelage", "fecha" => 2026,  "destacado" => true, "imagen" => "img/7.jpeg"],
+    
 ];
 
 $usuarios =[

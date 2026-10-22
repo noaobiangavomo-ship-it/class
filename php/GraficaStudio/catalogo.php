@@ -26,9 +26,9 @@ $profesionElegida = "contable";
         ?>
     </section>
 
-    <h2>Revistas de <?= htmlspecialchars($profesionElegida, ENT_QUOTES, "UTF-8") ?></h2>
+    <h2>Revistas de  </h2>
 
-    <section class="peliculas">
+    <section class="revistas">
         <?php
         foreach ($revistas as $revista) {
             if (stripos($revista["profesion"], $profesionElegida) !== false) {

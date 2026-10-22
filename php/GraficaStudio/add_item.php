@@ -15,7 +15,7 @@ if (!isAdmin()) {
 
 $error = "";
 if (!$sinPermiso && $_SERVER["REQUEST_METHOD"] === "POST") {
-    // CAMBIO: recoger y comprobar los datos del formulario antes de guardarlos.
+    //  recoger y comprobar los datos del formulario antes de guardarlos.
     $titulo = trim($_POST["titulo"] ?? "");
     $entrevista = trim($_POST["entrevista"] ?? "");
     $profesion = trim($_POST["profesion"] ?? "");
